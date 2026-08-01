@@ -26,6 +26,19 @@
   });
 })();
 
+// Intro overlay cleanup (home page only)
+(function () {
+  const overlay = document.getElementById('introOverlay');
+  if (!overlay) return;
+  overlay.addEventListener('animationend', function (e) {
+    if (e.animationName === 'introWipe') {
+      overlay.style.display = 'none';
+    }
+  });
+  // fallback in case animation event doesn't fire (e.g. reduced motion)
+  setTimeout(() => { if (overlay) overlay.style.display = 'none'; }, 2200);
+})();
+
 // Mobile hamburger menu
 (function () {
   const nav = document.querySelector('.site-nav');

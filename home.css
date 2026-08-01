@@ -222,3 +222,92 @@
   .spotlight-wrap { height: 60px; }
   .spotlight { width: 240px; height: 60px; }
 }
+
+/* ===== Intro entrance animation (home page only) ===== */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--surface-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: introWipe 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.55s forwards;
+}
+.intro-overlay::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 40px;
+  background: var(--paper);
+  clip-path: polygon(
+    0% 100%, 0% 40%, 4% 60%, 8% 30%, 12% 65%, 16% 35%, 20% 70%,
+    24% 25%, 28% 60%, 32% 35%, 36% 68%, 40% 30%, 44% 62%, 48% 38%,
+    52% 70%, 56% 32%, 60% 64%, 64% 28%, 68% 60%, 72% 35%, 76% 68%,
+    80% 30%, 84% 62%, 88% 36%, 92% 66%, 96% 32%, 100% 55%, 100% 100%
+  );
+}
+.intro-mark {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  color: var(--cyan);
+  opacity: 0;
+  animation: introMarkFade 0.5s ease 0.15s forwards, introMarkOut 0.3s ease 0.55s forwards;
+}
+@keyframes introMarkFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes introMarkOut {
+  to { opacity: 0; }
+}
+@keyframes introWipe {
+  to { transform: translateY(-100%); }
+}
+
+.hero .eyebrow,
+.hero-headline .line1,
+.hero-headline .line2,
+.hero-headline .line3,
+.hero-name,
+.spotlight-wrap,
+.scroll-hint {
+  opacity: 0;
+  animation: heroRise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.hero .eyebrow       { animation-delay: 0.75s; }
+.hero-headline .line1 { animation-delay: 0.85s; }
+.hero-headline .line2 { animation-delay: 0.95s; }
+.hero-headline .line3 { animation-delay: 1.05s; }
+.hero-name            { animation-delay: 1.18s; }
+.spotlight-wrap        { animation-delay: 1.25s; }
+.scroll-hint            { animation-delay: 1.75s; }
+
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.identity-cards .id-card.tilt-left {
+  animation: cardSettleLeft 0.6s cubic-bezier(0.3, 1.4, 0.5, 1) 1.4s both;
+}
+.identity-cards .id-card.tilt-right {
+  animation: cardSettleRight 0.6s cubic-bezier(0.3, 1.4, 0.5, 1) 1.55s both;
+}
+@keyframes cardSettleLeft {
+  0%   { opacity: 0; transform: rotate(-14deg) scale(0.85) translateY(16px); }
+  100% { opacity: 1; transform: rotate(-4deg) scale(1) translateY(0); }
+}
+@keyframes cardSettleRight {
+  0%   { opacity: 0; transform: rotate(14deg) scale(0.85) translateY(16px); }
+  100% { opacity: 1; transform: rotate(3deg) scale(1) translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-overlay { display: none; }
+  .hero .eyebrow, .hero-headline .line1, .hero-headline .line2, .hero-headline .line3,
+  .hero-name, .spotlight-wrap, .identity-cards, .scroll-hint, .identity-cards .id-card {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
