@@ -215,6 +215,10 @@
 .about-strip .sticker-star { color: var(--cyan); }
 
 @media (max-width: 600px) {
-  .hero { padding-top: 110px; }
+  .hero { padding-top: 130px; padding-left: 5%; padding-right: 5%; }
   .id-card { width: 88vw; max-width: 300px; }
+  .hero-headline .line1, .hero-headline .line2 { font-size: clamp(1.3rem, 5.6vw, 1.8rem); }
+  .hero-headline .line3 { font-size: clamp(1.7rem, 7vw, 2.3rem); }
+  .spotlight-wrap { height: 60px; }
+  .spotlight { width: 240px; height: 60px; }
 }

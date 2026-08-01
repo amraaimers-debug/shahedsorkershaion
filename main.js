@@ -25,3 +25,18 @@
     });
   });
 })();
+
+// Mobile hamburger menu
+(function () {
+  const nav = document.querySelector('.site-nav');
+  const toggle = document.querySelector('.menu-toggle');
+  if (!nav || !toggle) return;
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('menu-open');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => nav.classList.remove('menu-open'));
+  });
+})();

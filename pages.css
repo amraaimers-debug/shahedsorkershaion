@@ -330,3 +330,39 @@
   .about-layout, .contact-layout { flex-direction: column; }
   .about-portrait { margin: 0 auto; }
 }
+
+@media (max-width: 600px) {
+  .page-hero { padding: 120px 6% 50px; }
+  .page-hero h1 { font-size: clamp(1.7rem, 8vw, 2.4rem); }
+  .page-hero .sub { font-size: 1.1rem; }
+
+  .wrap, .wrap.narrow { padding: 0 5.5%; }
+
+  .note-block { padding: 24px 18px; margin: 22px auto 36px; }
+  .note-block p { font-size: 0.98rem; line-height: 1.85; }
+
+  .section-title { font-size: clamp(1.25rem, 5.5vw, 1.6rem); margin: 44px 0 6px; }
+
+  .about-text p { font-size: 0.98rem; }
+
+  .project-card { padding: 22px 18px; margin: 28px 0; }
+  .project-card h3 { font-size: 1.4rem; }
+  .project-card .links { gap: 12px; }
+
+  .skills-list { gap: 14px; }
+  .skill-row { gap: 14px; }
+  .skill-row .icon { flex: 0 0 34px; width: 34px; height: 34px; }
+  .skill-row .icon svg { width: 17px; height: 17px; }
+
+  .art-gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .contact-form input, .contact-form textarea { font-size: 16px; }
+  .contact-links .s-icon { width: 30px; height: 30px; }
+
+  .lightbox { padding: 16px; }
+  .lightbox .lb-close { top: 14px; right: 18px; font-size: 2rem; }
+}
+
+@media (max-width: 380px) {
+  .art-gallery { grid-template-columns: 1fr; }
+}
