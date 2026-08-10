@@ -39,6 +39,22 @@
   setTimeout(() => { if (overlay) overlay.style.display = 'none'; }, 2200);
 })();
 
+// Easter egg sticker
+(function () {
+  const btn = document.querySelector('.egg-sticker');
+  const modal = document.querySelector('.egg-modal');
+  if (!btn || !modal) return;
+  btn.addEventListener('click', () => modal.classList.add('open'));
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target.classList.contains('egg-close')) {
+      modal.classList.remove('open');
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') modal.classList.remove('open');
+  });
+})();
+
 // Mobile hamburger menu
 (function () {
   const nav = document.querySelector('.site-nav');
