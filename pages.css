@@ -195,9 +195,9 @@
 .skill-row {
   display: flex;
   gap: 18px;
-  align-items: flex-start;
+  align-items: center;
   border-bottom: 1.5px dashed var(--dashed);
-  padding-bottom: 18px;
+  padding-bottom: 16px;
 }
 .skill-row .icon {
   flex: 0 0 40px;
@@ -211,9 +211,8 @@
 .skill-row h4 {
   font-family: var(--font-display);
   font-size: 1.15rem;
-  margin: 0 0 4px;
+  margin: 0;
 }
-.skill-row p { margin: 0; font-size: 0.96rem; line-height: 1.6; color: var(--muted); }
 
 /* ===== Art gallery ===== */
 .art-gallery {
