@@ -948,18 +948,67 @@ But since you looked this far — thank you.</p>
 })();
 
 // Theme toggle (light / dark, session-only)
-(function () {
-  const html = document.documentElement;
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (prefersDark) html.setAttribute('data-theme', 'dark');
+:root {
+  --paper: #08090D;
+  --paper-dim: #11131A;
+  --grid-line: rgba(255,255,255,0.035);
+  --ink: #F2F2F0;
+  --surface: #11131A;
+  --surface-black: #08090D;
+  --nav-bg: rgba(8,9,13,0.86);
+  --shadow-hard: rgba(0,0,0,0.3);
+  --tape: rgba(255,255,255,0.08);
+  --muted: #B8BAC4;
+  --muted-2: #858894;
+  --dashed: #30323D;
 
-  document.querySelectorAll('.theme-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    });
-  });
-})();
+  --cyan: #7C8CFF;
+  --cyan-deep: #6979EB;
+  --cyan-ink: #DCE0FF;
+  --cyan-text: #A9B4FF;
+
+  --font-display: 'Hind Siliguri', sans-serif;
+  --font-body: 'Hind Siliguri', sans-serif;
+  --font-hand: 'Caveat', cursive;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --border-thick: 1px solid rgba(255,255,255,0.13);
+  --border-thin: 1px solid rgba(255,255,255,0.12);
+
+  color-scheme: dark;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+html[data-theme="light"] {
+  --paper: #F6F5F1;
+  --paper-dim: #ECEBF0;
+  --grid-line: rgba(20,20,30,0.055);
+  --ink: #171821;
+  --surface: #FFFFFF;
+  --surface-black: #F6F5F1;
+  --nav-bg: rgba(246,245,241,0.88);
+  --shadow-hard: rgba(20,20,30,0.08);
+  --tape: rgba(20,20,30,0.06);
+  --muted: #50515C;
+  --muted-2: #777985;
+  --dashed: #D4D3DB;
+
+  --cyan: #6979EB;
+  --cyan-deep: #5363D1;
+  --cyan-ink: #242D73;
+  --cyan-text: #5363D1;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
 
 // Intro overlay cleanup (home page only)
 (function () {
