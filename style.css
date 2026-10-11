@@ -1,58 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* ===== Light theme (default) ===== */
-  --paper: #FAFAF6;
-  --paper-dim: #F1F0E9;
-  --grid-line: #DEDDD3;
-  --ink: #0D0D0D;
-  --surface: #FFFFFF;
-  --surface-black: #0A0A0A;
-  --nav-bg: rgba(250, 250, 246, 0.88);
-  --shadow-hard: rgba(0,0,0,0.9);
-  --tape: rgba(255,255,255,0.65);
-  --muted: #333333;
-  --muted-2: #666666;
-  --dashed: #cccccc;
+  --paper: #08090D;
+  --paper-dim: #11131A;
+  --grid-line: rgba(255,255,255,0.035);
+  --ink: #F2F2F0;
+  --surface: #11131A;
+  --surface-black: #08090D;
+  --nav-bg: rgba(8,9,13,0.86);
+  --shadow-hard: rgba(0,0,0,0.3);
+  --tape: rgba(255,255,255,0.08);
+  --muted: #B8BAC4;
+  --muted-2: #858894;
+  --dashed: #30323D;
 
-  --cyan: #12D6F5;
-  --cyan-deep: #049CB8;
-  --cyan-ink: #003B45;
-  --cyan-text: var(--cyan-deep);
+  --cyan: #7C8CFF;
+  --cyan-deep: #6979EB;
+  --cyan-ink: #DCE0FF;
+  --cyan-text: #A9B4FF;
 
-  --font-display: 'Baloo Da 2', 'Hind Siliguri', sans-serif;
+  --font-display: 'Hind Siliguri', sans-serif;
   --font-body: 'Hind Siliguri', sans-serif;
   --font-hand: 'Caveat', cursive;
   --font-mono: 'JetBrains Mono', monospace;
 
-  --border-thick: 3px solid var(--ink);
-  --border-thin: 1.5px solid var(--ink);
-
-  color-scheme: light;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-html[data-theme="dark"] {
-  /* ===== Dark theme — chalkboard sketchbook ===== */
-  --paper: #16181C;
-  --paper-dim: #1B1D22;
-  --grid-line: rgba(255,255,255,0.035);
-  --ink: #F4F3EE;
-  --surface: #1F2226;
-  --surface-black: #000000;
-  --nav-bg: rgba(18, 20, 24, 0.88);
-  --shadow-hard: rgba(18,214,245,0.3);
-  --tape: rgba(255,255,255,0.1);
-  --muted: #CFCFC9;
-  --muted-2: #9C9C97;
-  --dashed: #3C3F44;
-
-  --cyan: #2FE3FF;
-  --cyan-deep: #33CFEE;
-  --cyan-ink: #B9F6FF;
-  --cyan-text: var(--cyan);
+  --border-thick: 1px solid rgba(255,255,255,0.13);
+  --border-thin: 1px solid rgba(255,255,255,0.12);
 
   color-scheme: dark;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+html[data-theme="light"] {
+  --paper: #F6F5F1;
+  --paper-dim: #ECEBF0;
+  --grid-line: rgba(20,20,30,0.055);
+  --ink: #171821;
+  --surface: #FFFFFF;
+  --surface-black: #F6F5F1;
+  --nav-bg: rgba(246,245,241,0.88);
+  --shadow-hard: rgba(20,20,30,0.08);
+  --tape: rgba(20,20,30,0.06);
+  --muted: #50515C;
+  --muted-2: #777985;
+  --dashed: #D4D3DB;
+
+  --cyan: #6979EB;
+  --cyan-deep: #5363D1;
+  --cyan-ink: #242D73;
+  --cyan-text: #5363D1;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
 }
 
 * { box-sizing: border-box; }
